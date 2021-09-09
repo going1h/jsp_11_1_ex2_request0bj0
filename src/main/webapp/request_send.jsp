@@ -17,7 +17,7 @@
 		age = Integer.parseInt(agestr);
 		
 		if(age>=20){
-			response.sendRedirect("pass.jsp?age=" + age); // 가지고온 age값을 pass.jsp 에 전달
+			response.sendRedirect("pass.jsp?age=" + age); // 가지고온 age값을 pass.jsp 에 전달 그래서 <%=age % >쓸수 있나봄
 		}else{
 			response.sendRedirect("ng.jsp?age=" + age); // 가지고온 age 값을 ng.jsp에 전달
 		}
