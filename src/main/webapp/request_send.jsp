@@ -9,17 +9,23 @@
 <body>
 	<%!
 		int age;
-		String agestr;
+		String agestr,name;
 	%>
-	
+		
 	<%
+		request.setCharacterEncoding("EUC-KR");
+		response.setCharacterEncoding("EUC-KR");
+	
 		agestr = request.getParameter("age");
+		name = request.getParameter("name");
 		age = Integer.parseInt(agestr);
 		
 		if(age>=20){
-			response.sendRedirect("pass.jsp?age=" + age); // 가지고온 age값을 pass.jsp 에 전달 그래서 <%=age % >쓸수 있나봄
+			request.setCharacterEncoding("EUC-KR");
+			response.sendRedirect("pass.jsp?age=" + age + "&name=" + name); // 가지고온 age값을 pass.jsp 에 전달 그래서 <%=age % >쓸수 있나봄
 		}else{
-			response.sendRedirect("ng.jsp?age=" + age); // 가지고온 age 값을 ng.jsp에 전달
+			request.setCharacterEncoding("EUC-KR");
+			response.sendRedirect("ng.jsp?age=" + age + "&name=" + name); // 가지고온 age 값을 ng.jsp에 전달 // &name 뒤에 값에 추가해주기
 		}
 	%>
 </body>

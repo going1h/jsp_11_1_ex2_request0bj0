@@ -9,14 +9,17 @@
 <body>
 		<%!
 		int age;
-		String agestr;
+		String agestr,name;
 	%>
 	
 	<%
+		request.setCharacterEncoding("EUC-KR");
+	
 		agestr = request.getParameter("age");
 		age = Integer.parseInt(agestr);
+		name = request.getParameter("name");
 	%>
 	
-	<h1>당신은 <%=age %>살 이므로 . 홈페이지 입장이 가능합니다.</h1>
+	<h1><%=name %>님은 <%=age %>살 이므로 . 홈페이지 입장이 가능합니다.</h1>
 </body>
 </html>
